@@ -21,6 +21,7 @@ MRuby::Build.new do |conf|
   conf.gem :mgem => "mruby-at_exit"
   conf.gem :mgem => "mruby-onig-regexp"
   conf.gem :mgem => "mruby-method"
+  conf.gem :mgem => "mruby-catch-throw"
   conf.gem :github => "kou/mruby-pp"
   # You can add gem what you want to testing
   # conf.gem :mgem => "your-gem"
