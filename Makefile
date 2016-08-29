@@ -19,7 +19,7 @@ mspec:
 	git clone --depth 1 https://github.com/ksss/mspec.git --branch mruby
 
 compile: build
-	cd mruby; MRUBY_CONFIG=../build_config.rb ruby minirake
+	cd mruby; MRUBY_CONFIG=../build_config.rb ruby ./minirake
 .PHONY: compile
 
 clean:
