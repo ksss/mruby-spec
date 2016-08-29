@@ -1,4 +1,4 @@
-run: build compile
+run: compile
 	cp todo/rbconfig.rb mruby/build/host/lib
 	cp todo/iconv.rb mruby/build/host/lib
 	cp todo/pp.rb mruby/build/host/lib
@@ -18,7 +18,7 @@ spec:
 mspec:
 	git clone --depth 1 https://github.com/ksss/mspec.git --branch mruby
 
-compile:
+compile: build
 	cd mruby; MRUBY_CONFIG=../build_config.rb ruby minirake
 .PHONY: compile
 
