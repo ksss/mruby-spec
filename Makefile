@@ -22,6 +22,11 @@ compile: build
 	cd mruby; MRUBY_CONFIG=../build_config.rb ruby ./minirake
 .PHONY: compile
 
+pull:
+	cd mruby; git pull
+	cd spec; git pull
+	cd mspec; git pull
+.PHONY: pull
 clean:
 	rm -fr mruby spec mspec
 .PHONY: clean
