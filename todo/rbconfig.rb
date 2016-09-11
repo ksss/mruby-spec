@@ -8,9 +8,28 @@ module RbConfig
 end
 
 class File
+  Separator = SEPARATOR
   class << self
-    def executable?(file)
-      File::Stat.new(file).executable?
+    def executable?(path)
+      File::Stat.new(path).executable?
+    end
+
+    def readable?(path)
+      File::Stat.new(path).readable?
+    end
+
+    def readlines(path)
+      a = []
+      File.open(path) do |f|
+        while line = f.gets
+          a << line
+        end
+      end
+      a
+    end
+
+    def split(path)
+      [File.dirname(path), File.basename(path)]
     end
   end
 end
@@ -33,4 +52,7 @@ module Kernel
     $stderr.puts message
     raise SystemExit
   end
+end
+class Module
+  alias private_instance_methods instance_methods
 end
