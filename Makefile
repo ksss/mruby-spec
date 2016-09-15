@@ -16,7 +16,7 @@ spec:
 	git clone --depth 1 https://github.com/ruby/spec.git
 
 mspec:
-	git clone --depth 1 https://github.com/ksss/mspec.git --branch mruby
+	git clone --depth 1 https://github.com/ruby/mspec.git
 
 compile: build
 	cd mruby; MRUBY_CONFIG=../build_config.rb ruby ./minirake
