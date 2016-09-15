@@ -35,7 +35,6 @@ make TESTS="core/string"
 - Remove `todo` dir
 - Use upstream repositories about forked them.
   - ksss/mruby-require
-  - ksss/mspec
 
 # Help
 
