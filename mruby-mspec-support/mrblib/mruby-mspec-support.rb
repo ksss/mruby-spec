@@ -1,11 +1,6 @@
-# This file is missing collection by mruby
+# Define functionality needed by mspec and missing from MRuby
 
-module RbConfig
-  CONFIG = {
-    "RUBY_INSTALL_NAME" => "mruby",
-    "bindir" => "mruby/bin",
-  }
-end
+RUBY_PLATFORM = "mruby"
 
 class File
   Separator = SEPARATOR
@@ -43,16 +38,13 @@ end
 class SystemExit < Exception
 end
 
-RUBY_PLATFORM = ""
-RUBY_PATCHLEVEL = 0
-$: << File.dirname(File.dirname(File.dirname(File.dirname(File.dirname(__FILE__)))))
-
 module Kernel
   def abort(message)
     $stderr.puts message
     raise SystemExit
   end
 end
+
 class Module
   alias private_instance_methods instance_methods
 end

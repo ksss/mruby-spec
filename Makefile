@@ -1,8 +1,5 @@
 run: compile
-	cp todo/rbconfig.rb mruby/build/host/lib
-	cp todo/iconv.rb mruby/build/host/lib
-	cp todo/pp.rb mruby/build/host/lib
-	mruby/bin/mruby mspec/bin/mspec-run spec/$(TESTS)
+	mruby/bin/mruby mspec/bin/mspec -B mruby.mspec $(TESTS)
 .PHONY: run
 
 build: mruby spec mspec
@@ -10,7 +7,6 @@ build: mruby spec mspec
 
 mruby:
 	git clone --depth 1 https://github.com/mruby/mruby.git
-	sed -i -e 's|//#define MRB_INT64|#define MRB_INT64|' mruby/include/mrbconf.h
 
 spec:
 	git clone --depth 1 https://github.com/ruby/spec.git
