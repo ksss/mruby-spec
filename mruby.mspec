@@ -11,3 +11,7 @@ class MSpecScript
   MSpec.disable_feature :encoding
   MSpec.disable_feature :readline
 end
+
+# work around patches for mruby-require
+$LOAD_PATH = $:
+$LOADED_FEATURES = $"

@@ -30,12 +30,6 @@ make TESTS="core/string/clone_spec.rb"
 make TESTS="core/string"
 ```
 
-# TODO
-
-- Remove `todo` dir
-- Use upstream repositories about forked them.
-  - ksss/mruby-require
-
 # Help
 
 I hope mruby have compatibility with CRuby to some extent.

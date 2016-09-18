@@ -26,5 +26,5 @@ MRuby::Build.new do |conf|
   conf.gem 'mruby-mspec-support'
   # You can add gem what you want to testing
   # conf.gem :mgem => "your-gem"
-  conf.gem :github => "ksss/mruby-require", :branch => "mspec"
+  conf.gem :mgem => "mruby-require"
 end
