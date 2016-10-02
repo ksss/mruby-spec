@@ -1,3 +1,5 @@
+MRUBY_CONFIG=../build_config.rb
+
 run: compile
 	mruby/bin/mruby mspec/bin/mspec -B mruby.mspec $(TESTS)
 .PHONY: run
@@ -15,7 +17,7 @@ mspec:
 	git clone --depth 1 https://github.com/ruby/mspec.git
 
 compile: build
-	cd mruby; MRUBY_CONFIG=../build_config.rb ruby ./minirake
+	cd mruby; MRUBY_CONFIG=${MRUBY_CONFIG} ruby ./minirake
 .PHONY: compile
 
 pull:
