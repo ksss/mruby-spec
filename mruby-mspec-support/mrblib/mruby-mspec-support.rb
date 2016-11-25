@@ -43,6 +43,14 @@ module Kernel
     $stderr.puts message
     raise SystemExit
   end
+
+  def <=>(o)
+    if self == o
+      0
+    else
+      nil
+    end
+  end
 end
 
 class Module
