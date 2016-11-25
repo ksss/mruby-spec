@@ -62,4 +62,21 @@ class Module
     require feature
   end
 
+  prepend Module.new {
+    def define_method(name, obj = nil, &block)
+      if block
+        super(name, &block)
+      elsif obj && obj.instance_of?(Method) || obj.instance_of?(UnboundMethod)
+        if method_proc = obj.instance_variable_get(:@proc)
+          super(name, &method_proc)
+        else
+          raise TypeError, "bind argument must be a subclass of #{obj.owner}"
+        end
+      elsif obj.instance_of?(Proc)
+        super(name, &obj)
+      else
+        super
+      end
+    end
+  }
 end
