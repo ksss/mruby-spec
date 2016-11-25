@@ -47,4 +47,19 @@ end
 
 class Module
   alias private_instance_methods instance_methods
+  def private_constant(*)
+    self
+  end
+  def private_class_method(*)
+    self
+  end
+  def public_class_method(*)
+    self
+  end
+  def nesting
+  end
+  def autoload(const_name, feature)
+    require feature
+  end
+
 end
