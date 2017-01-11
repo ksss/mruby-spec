@@ -10,6 +10,12 @@ class MSpecScript
   MSpec.disable_feature :fork
   MSpec.disable_feature :encoding
   MSpec.disable_feature :readline
+
+  Dir["unsupported/**/*.txt"].each do |path|
+    File.open(path).each_line do |line|
+      MSpec.register :exclude, line.chomp!
+    end
+  end
 end
 
 # work around patches for mruby-require

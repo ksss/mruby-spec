@@ -1,0 +1,1 @@
+Signal.trap is possible to create a new Thread when the handler runs
