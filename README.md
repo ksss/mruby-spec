@@ -30,6 +30,10 @@ make TESTS="core/string/clone_spec.rb"
 make TESTS="core/string"
 ```
 
+# Unsupported specs
+
+Register full description text to file under `unsupported`.
+
 # Help
 
 I hope mruby have compatibility with CRuby to some extent.
