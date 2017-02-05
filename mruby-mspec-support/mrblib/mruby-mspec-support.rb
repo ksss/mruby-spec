@@ -88,3 +88,11 @@ class Module
     end
   }
 end
+
+Signal.trap(:SIGSEGV) {
+  puts
+  puts "!!! catch SIGSEGV !!!"
+  puts "-- Ruby level backtrace information ----------------------------------------"
+  puts caller.join("\n")
+  Signal.trap(:SIGSEGV, 'DEFAULT')
+}
