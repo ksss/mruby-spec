@@ -13,6 +13,10 @@ class File
       File::Stat.new(path).readable?
     end
 
+    def writable_real?(path)
+      File::Stat.new(path).writable_real?
+    end
+
     def readlines(path)
       a = []
       File.open(path) do |f|
@@ -87,6 +91,50 @@ class Module
       end
     end
   }
+end
+
+class Object
+  def taint(*)
+    self
+  end
+
+  def tainted?(*)
+    false
+  end
+
+  def untrust(*)
+    self
+  end
+
+  def untrusted?(*)
+    false
+  end
+end
+
+class Encoding
+  US_ASCII = -1
+  ASCII_8BIT = -1
+  UTF_8 = -1
+  ISO_8859_1 = -1
+  UTF_16LE = -1
+  ISO_8859_5 = -1
+  CompatibilityError = Class.new(StandardError)
+  def initialize(*)
+  end
+end
+
+class String
+  def encode(*)
+    self
+  end
+
+  def encoding(*)
+    Encoding::ASCII_8BIT
+  end
+
+  def force_encoding(*)
+    self
+  end
 end
 
 Signal.trap(:SIGABRT) {
