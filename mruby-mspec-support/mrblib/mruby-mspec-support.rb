@@ -89,6 +89,10 @@ class Module
   }
 end
 
+Signal.trap(:SIGABRT) {
+  puts "SIGABRT from"
+  puts caller.join("\n")
+}
 Signal.trap(:SIGSEGV) {
   puts
   puts "!!! catch SIGSEGV !!!"
