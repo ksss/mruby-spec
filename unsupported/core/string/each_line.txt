@@ -1,0 +1,2 @@
+String#each_line yields paragraphs (broken by 2 or more successive newlines) when passed ''
+String#each_line uses $/ as the separator when none is given
