@@ -1,7 +1,7 @@
 # Define functionality needed by mspec and missing from MRuby
 
 RUBY_PLATFORM = "mruby"
-
+RUBY_DESCRIPTION = MRUBY_DESCRIPTION
 class File
   Separator = SEPARATOR
   class << self
