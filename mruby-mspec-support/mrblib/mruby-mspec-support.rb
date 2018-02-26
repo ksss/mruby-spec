@@ -2,6 +2,9 @@
 
 RUBY_PLATFORM = "mruby"
 RUBY_DESCRIPTION = MRUBY_DESCRIPTION
+RUBY_VERSION = "2.2.0"
+RUBY_NAME = "mruby"
+
 class File
   Separator = SEPARATOR
   class << self
@@ -128,6 +131,7 @@ class Encoding
   ISO_8859_1 = -1
   UTF_16LE = -1
   ISO_8859_5 = -1
+  EUC_JP = -1
   CompatibilityError = Class.new(StandardError)
   def initialize(*)
   end
