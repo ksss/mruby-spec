@@ -94,6 +94,16 @@ class Module
 end
 
 class Object
+  prepend Module.new {
+    def exec(*args)
+      # follow kwd args :close_others
+      if args.last.instance_of?(Hash)
+        args.pop
+      end
+      super(*args)
+    end
+  }
+
   def taint(*)
     self
   end
@@ -134,6 +144,12 @@ class String
 
   def force_encoding(*)
     self
+  end
+end
+
+class Integer
+  def size
+    8
   end
 end
 
