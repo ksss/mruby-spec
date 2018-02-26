@@ -1,0 +1,1 @@
+IO.select when passed nil for timeout sleeps forever and sets the thread status to 'sleep'

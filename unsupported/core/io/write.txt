@@ -1,0 +1,1 @@
+IO.write on a FIFO writes correctly
