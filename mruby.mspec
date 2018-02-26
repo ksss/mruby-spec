@@ -13,7 +13,7 @@ class MSpecScript
 
   Dir["unsupported/**/*.txt"].each do |path|
     File.open(path).each_line do |line|
-      MSpec.register :exclude, line.chomp!
+      MSpec.register :exclude, line.chomp
     end
   end
 end
