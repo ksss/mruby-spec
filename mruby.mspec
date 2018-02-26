@@ -16,6 +16,8 @@ class MSpecScript
       MSpec.register :exclude, line.chomp
     end
   end
+  # mruby hasn't supported recursive object yet
+  MSpec.register :exclude, /recursive|tainted/
 end
 
 # work around patches for mruby-require
