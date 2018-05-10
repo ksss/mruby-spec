@@ -1,0 +1,11 @@
+--- spec/core/kernel/fixtures/classes.rb
++++ spec/core/kernel/fixtures/classes.rb
+@@ -411,7 +411,7 @@
+ 
+ # for Kernel#sleep to have Channel in it's specs
+ # TODO: switch directly to queue for both Kernel#sleep and Thread specs?
+-unless defined? Channel
++unless Object.const_defined?(:Channel)
+   require 'thread'
+   class Channel < Queue
+     alias receive shift

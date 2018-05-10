@@ -12,6 +12,7 @@ mruby:
 
 spec:
 	git clone --depth 1 https://github.com/ruby/spec.git
+	patch -p0 -f < spec.patch
 
 mspec:
 	git clone --depth 1 https://github.com/ruby/mspec.git
