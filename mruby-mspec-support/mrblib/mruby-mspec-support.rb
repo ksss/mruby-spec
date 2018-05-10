@@ -48,7 +48,7 @@ end
 Object.prepend Module.new {
   def require(path)
     case path
-    when "uri", "thread"
+    when "stringio", "socket", "uri", "thread"
       # skip
       false
     else
