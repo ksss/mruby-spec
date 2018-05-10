@@ -45,6 +45,22 @@ end
 class SystemExit < Exception
 end
 
+Object.prepend Module.new {
+  def require(path)
+    case path
+    when "uri"
+      # skip
+      false
+    else
+      super
+    end
+  end
+
+  def require_relative(path)
+    require File.expand_path(path, File.dirname(Kernel.caller(1, 1).first.split(":").first))
+  end
+}
+
 module Kernel
   def abort(message)
     $stderr.puts message
