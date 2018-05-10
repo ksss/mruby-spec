@@ -16,6 +16,8 @@ MRuby::Build.new do |conf|
   conf.gem :mgem => "mruby-signal"
   conf.gem :mgem => "mruby-thread"
   conf.gem :mgem => "mruby-file-stat"
+  conf.gem :mgem => "mruby-stringio"
+  conf.gem :mgem => "mruby-uri"
   conf.gem :mgem => "mruby-process"
   conf.gem :mgem => "mruby-at_exit"
   conf.gem :mgem => "mruby-onig-regexp"
