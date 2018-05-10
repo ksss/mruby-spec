@@ -13,14 +13,12 @@ MRuby::Build.new do |conf|
   conf.gembox 'full-core'
   conf.gem :mgem => "mruby-env"
   conf.gem :mgem => "mruby-dir-glob"
-  conf.gem :mgem => "mruby-io"
   conf.gem :mgem => "mruby-signal"
   conf.gem :mgem => "mruby-thread"
   conf.gem :mgem => "mruby-file-stat"
   conf.gem :mgem => "mruby-process"
   conf.gem :mgem => "mruby-at_exit"
   conf.gem :mgem => "mruby-onig-regexp"
-  conf.gem :mgem => "mruby-method"
   conf.gem :mgem => "mruby-catch-throw"
   conf.gem :github => 'haconiwa/mruby-exec'
   conf.gem 'mruby-mspec-support'
