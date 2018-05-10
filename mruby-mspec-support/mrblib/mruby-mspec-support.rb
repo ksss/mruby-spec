@@ -74,10 +74,6 @@ module Kernel
       nil
     end
   end
-
-  def defined?(sym)
-    ::Object.const_defined?(sym)
-  end
 end
 
 class Module
