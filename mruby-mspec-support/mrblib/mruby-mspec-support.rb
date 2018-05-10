@@ -48,7 +48,7 @@ end
 Object.prepend Module.new {
   def require(path)
     case path
-    when "uri"
+    when "uri", "thread"
       # skip
       false
     else
